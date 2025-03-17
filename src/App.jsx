@@ -1,11 +1,22 @@
+import DefaultLayout from './layouts/DefaultLayout';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import MoviePage from './pages/MoviePage';
 
 function App() {
-  
   return (
     <>
-      <h1>Hello world</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route Component={DefaultLayout}>
+            {/* qui vanno le pagine */}
+            <Route path="/" Component={HomePage} />
+            <Route path="/movie/:id" Component={MoviePage} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
