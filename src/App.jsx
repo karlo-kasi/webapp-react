@@ -11,7 +11,7 @@ function App() {
           <Route Component={DefaultLayout}>
             {/* qui vanno le pagine */}
             <Route path="/" Component={HomePage} />
-            <Route path="/movie/:id" Component={MoviePage} />
+            <Route path="/movies/:id" Component={MoviePage} />
           </Route>
         </Routes>
       </BrowserRouter>
