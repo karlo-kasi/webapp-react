@@ -2,6 +2,7 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import ReviewCard from "../components/ReviewCard"
+import ReviewForm from "../components/ReviewForm"
 
 
 export default function MoviePage() {
@@ -33,7 +34,7 @@ export default function MoviePage() {
             <div className="col-4">
 
             <div className="card mb-4">
-                <img src={movie?.image} alt={movie?.title} />
+                <img src={movie?.image} alt={movie?.title} className="image-fluid" />
                 <div className="card-body">
                     <h5 className="card-title">{movie?.title}</h5>
                     <span>
@@ -55,6 +56,10 @@ export default function MoviePage() {
             <section>
                 <h4>Our community reviews</h4>
                 {renderMovie()}
+            </section>
+
+            <section>
+                {movie?.id && <ReviewForm movie_id={movie.id} fecthShow={fecthShow} />}
             </section>
         </>
     )
