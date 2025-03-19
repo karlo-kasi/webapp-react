@@ -55,7 +55,7 @@ export default function ReviewForm({ movie_id, fecthShow }) {
                     <label>Vote</label>
                     <input type="number" min={1} max={5} name="vote" className="form-control" value={formData.vote} onChange={setFieldValue} required />
                     <div>
-                        <button type="submit" className="btn btn-primary mt-4">
+                        <button type="submit" className="btn btn-danger mt-4">
                             Create Review
                         </button>
                     </div>

@@ -25,7 +25,13 @@ export default function MoviePage() {
         })
     }
 
-    const navigate = useNavigate();
+    const navigate = useNavigate()
+
+    const deleteCard = () => {
+        axios.delete(`http://localhost:3000/movies/${id}`)
+        .then(navigate("/"))
+
+    }
 
 
     return (
@@ -43,8 +49,9 @@ export default function MoviePage() {
                     <p>
                         {movie?.abstract}
                     </p>
-                    <button className="btn btn-primary" onClick={() => navigate(-1)}>
-                        Torna indietro
+                    <button onClick={deleteCard} className="btn btn-danger float-end">Delete</button>
+                    <button className="btn btn-warning" onClick={() => navigate(-1)}>
+                        Back
                     </button>
                 </div>
             </div>

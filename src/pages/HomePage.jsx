@@ -27,13 +27,15 @@ export default function HomePage() {
     })
   }
 
+  
+
 
 
   useEffect(fetchIndex, [])
 
   return (
     <>
-      <h1 className="text-primary mt-4">Films</h1>
+      <h1 className="text-danger mt-4">Films</h1>
       <div className="row row-cols-3">
         {renderMovie()}
       </div>
